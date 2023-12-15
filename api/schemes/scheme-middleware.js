@@ -62,8 +62,7 @@ validateScheme (req, res, next) {
 */
 validateStep (req, res, next) {
   const { instructions, step_number } = req.body
-  
-  if (instructions === undefined || 
+   if (instructions === undefined || 
     typeof instructions !== String ||
       !instructions.trim() ||
       typeof step_umber !== 'number' ||
