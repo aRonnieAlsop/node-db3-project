@@ -61,14 +61,13 @@ validateScheme (req, res, next) {
   }
 */
 validateStep (req, res, next) {
-  if (!req.body.instructions || 
-      !req.body.instructions.trim() || 
-      typeOf(req.body.instructions) !== String
-      ) {
-      next({ message: 'invalid step'})
-  } else if (
-      typeOf(req.body.step_number) !== Number ||
-      req.body.step_number < 1
+  const { instructions, step_number } = req.body
+  
+  if (instructions === undefined || 
+    typeof instructions !== String ||
+      !instructions.trim() ||
+      typeof step_umber !== 'number' ||
+      step_number < 1
       ) {
       next({ status: 400, message: 'invalid step'})
   } else {
