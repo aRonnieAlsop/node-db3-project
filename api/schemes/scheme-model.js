@@ -22,8 +22,6 @@ function find() { // EXERCISE A
     .select('sc.*')
     .count('st.step_id as number_of_steps')
     .groupBy('sc.scheme_id')
-
-  return rows
 }
 
 async function findById(scheme_id) { // EXERCISE B
