@@ -179,7 +179,11 @@ const addStep = (scheme_id, step) => { // EXERCISE E
         .select('step_id', 'step_number', 'instructions', 'scheme_name')
         .orderBy('step_number')
         .where('sc.scheme_id', scheme_id)
-    });
+    })
+    .catch((error) => {
+      console.error('Error in addStep:', error)
+      throw error
+    })
 }
 
 
